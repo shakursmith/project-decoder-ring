@@ -1,12 +1,4 @@
-
 function polybius(input, encode = true) {
-    // Data structure for the alphabet will be a single object
-    // The Object.entries method converts our object into an array of arrays
-    // Each "entry" will look like ["a", "11"]
-    // We can access our letters using entry[0] --> "a"
-    // We can access our number code using entry[1] --> "11"
-    if (!input) return false;
-
     const alphabet = {
         "a": "11", "b": "21", "c": "31", "d": "41", "e": "51",
         "f": "12", "g": "22", "h": "32", "i": "42", "j": "42", "k": "52",
@@ -14,13 +6,19 @@ function polybius(input, encode = true) {
         "q": "14", "r": "24", "s": "34", "t": "44", "u": "54",
         "v": "15", "w": "25", "x": "35", "y": "45", "z": "55"
         };
-    // Declaring my global variables
+    
+    // Handling missing or extreme values
+    if (!input) return false;
+
+    // Capital letters can be ignored
     const lowerCase = input.toLowerCase()
     let result = ""   
     
-    // If/else statement sets conditions for encode vs decode
+    // Create methods for encoding
     if (encode) {
         for (let i = 0; i < lowerCase.length; i++) {
+
+            // Spaces should be maintained throughout
             let char = lowerCase[i];
             if (char === "i" || char === "j") {
                 result += alphabet["i"];
@@ -32,7 +30,8 @@ function polybius(input, encode = true) {
             }
         }
     } else {
-        // Return false if decode string isn't an even number of letters
+
+        // Should return false if the string of coordinates is not an even number, ignoring spaces
         let counter = 0;
         for (let i = 0; i < input.length; i++) {
             if (input[i] !== " ") counter++;
@@ -41,6 +40,8 @@ function polybius(input, encode = true) {
             return false;
         };
 
+        // Create methods for decoding
+        // "I" and "J" should be shown together if included
         for (let i = 0; i < input.length; i+=2) {
             let code = `${input[i]}${input[i+1]}`;
             if (code.includes(" ")) {
@@ -54,7 +55,7 @@ function polybius(input, encode = true) {
             }
         }
     }
-    // Return our encoded or decoded message
+    // Should return an encoded/decoded message
     return result;
 }
 

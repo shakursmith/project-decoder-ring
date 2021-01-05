@@ -1,4 +1,3 @@
-// Write your tests here!
 const { expect } = require('chai');
 const substitution = require('../src/substitution');
 
@@ -39,10 +38,3 @@ describe(('Substitution Cipher'), () =>  {
         expect(actual).to.eql(expected)
     })
 })
-
-// substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
-// substitution("You are an excellent spy", "xoyqmcgrukswaflnthdjpzibev"); //> 'elp xhm xf mbymwwmfj dne'
-// substitution("jrufscpw", "xoyqmcgrukswaflnthdjpzibev", false); //> 'thinkful'
-
-// substitution("thinkful", "short"); //> false
-// substitution("thinkful", "abcabcabcabcabcabcabcabcyz"); //> false

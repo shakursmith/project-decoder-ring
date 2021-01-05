@@ -1,10 +1,3 @@
-// Write your tests here!
-// ascii
-// array containing the alphabet
-// Check for input, shift
-// Check the encode value
-// Check the shift value
-
 const { expect } = require("chai");
 const caesar = require("../src/caesar");
 
