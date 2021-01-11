@@ -1,4 +1,4 @@
-# Decoder Ring
+# Decoder Ring [Live Demo](https://shakursmith.github.io/project-decoder-ring/)
 
 > This project is for anyone who loves escape rooms and puzzles. This application includes three algorithms that will help you encode and decode all kinds of fun messages? Use it to build your own puzzles, to add a twist to your scavenger hunt, or just to send a secret message. Enjoy!
 
